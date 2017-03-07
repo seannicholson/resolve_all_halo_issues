@@ -6,7 +6,7 @@ Author: *Sean Nicholson*
 
 
 ### Halo API Key
-Place the values inside of cloudpassage.yml. The key_id and secret_key can be found from the Halo portal under Site Admin -> Api keys.
+Place the values inside of cloudpassage.yml. The key_id and secret_key can be found from the Halo portal under Site Admin -> Api keys. This script requires an API key with write permission to run.
 
 ```
     key_id:
@@ -31,6 +31,8 @@ Place the values inside of cloudpassage.yml. The key_id and secret_key can be fo
 
 ### Run
 Script will cycle through the all open issues in the API Key scope and resolve them.
+To resolve all issues for a particular group, use an API key with the scope of that group.
+To resolve all issues for a portal, use a root group scope API Key
 
 ```
     python resolve_all_issues.py
