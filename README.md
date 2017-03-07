@@ -33,6 +33,7 @@ Place the values inside of cloudpassage.yml. The key_id and secret_key can be fo
 Script will cycle through the all open issues in the API Key scope and resolve them.
 To resolve all issues for a particular group, use an API key with the scope of that group.
 To resolve all issues for a portal, use a root group scope API Key
+Depending on the number of issues in your portal, you may have to run this script multiple times.
 
 ```
     python resolve_all_issues.py
