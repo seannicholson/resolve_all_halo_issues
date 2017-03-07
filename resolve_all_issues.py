@@ -20,7 +20,7 @@ def create_api_session(session):
 
 def resolve_issues(session):
     issues= cloudpassage.HttpHelper(session)
-    list_of_issues_json = issues.get_paginated("/v2/issues", 'issues', 10)
+    list_of_issues_json = issues.get_paginated("/v2/issues", 'issues', 5)
     body = {"status": "resolved",}
     #print list_of_issues_json
     #loop list of issues and resolve them
