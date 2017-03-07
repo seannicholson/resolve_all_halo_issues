@@ -41,7 +41,7 @@ Depending on the number of issues in your portal, you may have to run this scrip
 ```
 
 ### Customizing which issues are resolved
-To resolve only issues from one module change line 23 of the resolve_all_issues.py
+To resolve only issues from one module change line 26 of the resolve_all_issues.py
 For this example, this change would resolve only SAM issues for the scope of the API key.
 ```
 Change from:

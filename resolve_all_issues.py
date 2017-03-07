@@ -10,7 +10,6 @@ import cloudpassage
 import yaml
 
 
-
 def create_api_session(session):
     config_file_loc = "cloudpassage.yml"
     config_info = cloudpassage.ApiKeyManager(config_file=config_file_loc)
@@ -19,8 +18,12 @@ def create_api_session(session):
 
 
 def resolve_issues(session):
+    get_number_of_issues= cloudpassage.HttpHelper(session)
+    number_of_issues = get_number_of_issues.get("/v2/issues")
+    number_of_pages = int(number_of_issues['count'])
+    number_of_pages = int(number_of_pages * .01)
     issues= cloudpassage.HttpHelper(session)
-    list_of_issues_json = issues.get_paginated("/v2/issues", 'issues', 5)
+    list_of_issues_json = issues.get_paginated("/v2/issues", 'issues', number_of_pages)
     body = {"status": "resolved",}
     #print list_of_issues_json
     #loop list of issues and resolve them
@@ -29,8 +32,6 @@ def resolve_issues(session):
         issue_to_resolve = cloudpassage.HttpHelper(session)
         list_of_issues_json = issue_to_resolve.get("/v2/issues")
         reply = issue_to_resolve.put("/v2/issues/" + issueID, body)
-
-
 
 
 
