@@ -43,11 +43,13 @@ Depending on the number of issues in your portal, you may have to run this scrip
 ### Customizing which issues are resolved
 To resolve only issues from one module change line 23 of the resolve_all_issues.py
 For this example, this change would resolve only SAM issues for the scope of the API key.
->Change from
-    list_of_issues_json = issues.get_paginated("/v2/issues", 'issues', 10)
-Change To
-    list_of_issues_json = issues.get_paginated("/v2/issues?issue_type=sam", 'issues', 10)
+```
+Change from:
+list_of_issues_json = issues.get_paginated("/v2/issues", 'issues', 10)
 
+Change To:
+list_of_issues_json = issues.get_paginated("/v2/issues?issue_type=sam", 'issues', 10)
+```
 Issues endpoint type examples: lids, fim, csm, sva, sam
 
 
