@@ -1,6 +1,6 @@
-# Halo Vulnerability Report
+# Resolve Halo Issues
 
-Version: *1.0*
+Version: *1.3*
 <br />
 Author: *Sean Nicholson*
 
